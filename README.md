@@ -4,4 +4,4 @@ A collection of my solutions to LeetCode problems. This repository is dedicated 
 
 # Question 1: Valid Sudoku
 
-See [valid-sudoku.md](valid-sudoku.md) for the full problem statement, examples, and constraints.
+See [valid-sudoku.md](Valid-Sudoku/valid-sudoku.md) for the full problem statement, examples, and constraints.
