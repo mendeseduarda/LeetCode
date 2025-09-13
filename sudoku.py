@@ -1,13 +1,28 @@
 
+from collections import defaultdict
 from typing import List
 
 def is_valid_sudoku(board: List[List[str]]) -> bool:
-	"""
-	Recebe um tabuleiro 9x9 de Sudoku como lista de listas de strings.
-	Retorna True se o tabuleiro for válido, False caso contrário.
-	"""
-	# ... implementação será feita aqui ...
-	pass
+	rows = defaultdict(set)
+	columns = defaultdict(set)
+	boxes = defaultdict(set)
+
+	for i in range(9):
+		for j in range(9):
+			current = board[i][j]
+			if current == ".":
+				continue
+			if (current in rows[i] or
+				current in columns[j] or
+				current in boxes[(i // 3, j // 3)]):
+				return False	
+			
+			rows[i].add(current)
+			columns[j].add(current)
+			boxes[(i // 3, j // 3)].add(current)
+
+	return True
+
 
 # Exemplo de uso:
 if __name__ == "__main__":
